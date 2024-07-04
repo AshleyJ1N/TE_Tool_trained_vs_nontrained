@@ -1,0 +1,12 @@
+此项目包括了在python和matlab下书写的AlexNet的训练代码
+
+alexnet_tool_excluded_train.py 和alexnet_tool_included_train.py 为用python语言写的训练代码，前者使用了去除所有工具标签的ImageNet2012的数据集，后者使用了原始的ImageNet2012数据集
+alexnet_tool_excluded.m 和alexnet_tool_included.m 为用matlab语言写的训练代码，前者使用了去除所有工具标签的ImageNet2012的数据集，后者使用了原始的ImageNet2012数据集
+
+具体训练参数为：
+batch size = 128, 
+momentum = 0.9, 
+weight decay = 0.0005, 
+training epoch = 90, 
+learning rate = 0.01, 
+learning rate decay = 10 times for every 30 epochs.
