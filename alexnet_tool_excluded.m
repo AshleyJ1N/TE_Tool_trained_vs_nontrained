@@ -1,6 +1,6 @@
 % 
-% Ê¹ÓÃÈ¥³ıÁËËùÓĞ¹¤¾ß±êÇ©µÄImageNet2012£¨LSVRC2012£¬¹²925·ÖÀà£©ÑµÁ·µÄalexnet
-% ÑµÁ·²ÎÊı£º
+% ä½¿ç”¨å»é™¤äº†æ‰€æœ‰å·¥å…·æ ‡ç­¾çš„ImageNet2012ï¼ˆLSVRC2012ï¼Œå…±925åˆ†ç±»ï¼‰è®­ç»ƒçš„alexnet
+% è®­ç»ƒå‚æ•°ï¼š
 % batch size = 128, momentum = 0.9, weight decay = 0.0005, training epoch = 90, 
 % learning rate = 0.01, learning rate decay = 10 times for every 30 epochs.
 % 
@@ -13,7 +13,7 @@ weightdecay = 0.0005;
 epoch = 90;
 learningrate = 0.01;
 
-%% åŠ è½½æ•°æ®é›?
+%% å‡†å¤‡æ•°æ®é›†
 imdsTrain = imageDatastore('train', ...
     'IncludeSubfolders',true, ...
     'LabelSource','foldernames');
@@ -22,14 +22,14 @@ imdsValidation = imageDatastore('val', ...
     'IncludeSubfolders',true, ...
     'LabelSource','foldernames');
 
-%% åŠ è½½ç½‘ç»œ
+%% ä½¿ç”¨æœªé¢„è®­ç»ƒçš„æ¨¡å‹
 numClasses = 925;
 
 net = imagePretrainedNetwork("alexnet","weights","none","NumClasses",numClasses);
 
 inputSize = net.Layers(1).InputSize;
 
-%% è®­ç»ƒ
+%% æ•°æ®é¢„å¤„ç†
 pixelRange = [-30 30];
 imageAugmenter = imageDataAugmenter( ...
     'RandXReflection',true, ...
